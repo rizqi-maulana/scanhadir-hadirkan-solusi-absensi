@@ -174,6 +174,30 @@ export const siteData = {
     scanner: "#" // Khusus untuk institusi
   },
 
+  // App Screenshots
+  screenshots: {
+    mobile: [
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png",
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png",
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png",
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png",
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png",
+      "/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png"
+    ],
+    scanner: [
+      "/lovable-uploads/94e5ba83-6cfc-455c-8504-5cf74d301853.png",
+      "/lovable-uploads/94e5ba83-6cfc-455c-8504-5cf74d301853.png"
+    ],
+    desktop: [
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png",
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png",
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png",
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png",
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png",
+      "/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png"
+    ]
+  },
+
   // Video Marketing
   video: {
     url: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Ganti dengan URL video Anda
