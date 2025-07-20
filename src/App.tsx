@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Documentation from "./pages/Documentation";
 import Privacy from "./pages/Privacy";
 import Download from "./pages/Download";
+import About from "./pages/About";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,7 +24,7 @@ const App = () => (
           <Route path="/fitur" element={<Index />} />
           <Route path="/harga" element={<Index />} />
           <Route path="/dokumentasi" element={<Documentation />} />
-          <Route path="/tentang" element={<Index />} />
+          <Route path="/tentang" element={<About />} />
           <Route path="/download" element={<Download />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="*" element={<NotFound />} />

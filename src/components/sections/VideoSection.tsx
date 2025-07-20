@@ -16,13 +16,16 @@ const VideoSection = () => {
 
         <div className="max-w-4xl mx-auto">
           <div className="relative aspect-video rounded-2xl overflow-hidden shadow-elegant bg-black">
-            <iframe
-              src={siteData.video.url}
-              title="ScanHadir Demo Video"
-              className="w-full h-full"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
+            <video
+              className="w-full h-full object-cover"
+              autoPlay
+              muted
+              loop
+              playsInline
+            >
+              <source src="/demo-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       </div>

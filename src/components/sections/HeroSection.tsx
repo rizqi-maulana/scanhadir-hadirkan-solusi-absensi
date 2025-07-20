@@ -47,9 +47,11 @@ const HeroSection = () => {
                   Download Sekarang
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg px-8 py-3">
-                <Play className="mr-2 h-5 w-5" />
-                Lihat Demo
+              <Button variant="outline" size="lg" asChild className="text-lg px-8 py-3">
+                <Link to="/tentang">
+                  <Play className="mr-2 h-5 w-5" />
+                  Tentang Kami
+                </Link>
               </Button>
             </div>
 
@@ -70,41 +72,42 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Images */}
-          <div className="relative">
-            <div className="grid grid-cols-2 gap-4">
-              {/* Mobile App */}
-              <div className="space-y-4">
-                <img
-                  src="/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png"
-                  alt="ScanHadir Mobile App"
-                  className="w-full rounded-2xl shadow-elegant transform rotate-2 hover:rotate-0 transition-transform duration-300"
-                />
+          {/* App Preview */}
+          <div className="relative flex justify-center items-center">
+            <div className="relative max-w-md mx-auto">
+              {/* Main Mobile App */}
+              <img
+                src="/lovable-uploads/b3d23025-f156-4be9-a1eb-7adf887da269.png"
+                alt="ScanHadir Mobile App"
+                className="w-full rounded-3xl shadow-elegant transform hover:scale-105 transition-transform duration-500"
+              />
+              
+              {/* Secondary App - Floating */}
+              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-24 hidden sm:block">
                 <img
                   src="/lovable-uploads/94e5ba83-6cfc-455c-8504-5cf74d301853.png"
-                  alt="QR Code Scanner"
-                  className="w-full rounded-2xl shadow-elegant transform -rotate-2 hover:rotate-0 transition-transform duration-300"
+                  alt="Scanner App"
+                  className="w-full rounded-2xl shadow-elegant transform rotate-12 hover:rotate-6 transition-transform duration-300"
                 />
               </div>
               
-              {/* Desktop App Preview */}
-              <div className="flex items-center">
-                <div className="bg-white p-4 rounded-2xl shadow-elegant">
-                  <div className="bg-primary/10 p-8 rounded-xl">
-                    <Smartphone className="h-16 w-16 text-primary mx-auto mb-4" />
-                    <p className="text-center text-sm font-medium">
-                      Dashboard Admin Desktop
-                    </p>
-                  </div>
+              {/* Desktop Preview - Floating */}
+              <div className="absolute -left-8 bottom-4 w-20 hidden sm:block">
+                <div className="bg-white p-2 rounded-lg shadow-elegant transform -rotate-12 hover:-rotate-6 transition-transform duration-300">
+                  <img
+                    src="/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png"
+                    alt="Desktop Dashboard"
+                    className="w-full rounded"
+                  />
                 </div>
               </div>
             </div>
 
-            {/* Floating elements */}
-            <div className="absolute -top-4 -right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium animate-pulse">
-              Terpercaya
+            {/* Floating badges */}
+            <div className="absolute -top-6 right-8 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium shadow-elegant animate-pulse">
+              Aman & Terpercaya
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-white px-3 py-1 rounded-full text-sm font-medium shadow-soft">
+            <div className="absolute -bottom-6 left-8 bg-white px-4 py-2 rounded-full text-sm font-medium shadow-elegant border">
               Mudah Digunakan
             </div>
           </div>

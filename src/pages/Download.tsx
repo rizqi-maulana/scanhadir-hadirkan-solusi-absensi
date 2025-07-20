@@ -64,7 +64,10 @@ const Download = () => {
 
               <Button className="w-full" asChild>
                 <a href={siteData.downloads.playstore} target="_blank" rel="noopener noreferrer">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
+                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3 20.5v-17c0-.827.673-1.5 1.5-1.5H21c.827 0 1.5.673 1.5 1.5v17c0 .827-.673 1.5-1.5 1.5H4.5c-.827 0-1.5-.673-1.5-1.5z"/>
+                    <path d="M14.5 9.5l-3 3-3-3" stroke="currentColor" strokeWidth="2" fill="none"/>
+                  </svg>
                   Download dari Play Store
                 </a>
               </Button>
@@ -150,15 +153,18 @@ const Download = () => {
 
               <Button variant="outline" className="w-full" asChild>
                 <a href={siteData.downloads.windows} target="_blank" rel="noopener noreferrer">
-                  <DownloadIcon className="mr-2 h-5 w-5" />
+                  <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.351"/>
+                  </svg>
                   Download untuk Windows
                 </a>
               </Button>
 
-              <div className="w-full mt-6 bg-muted/20 rounded-xl p-8 text-center">
-                <Monitor className="h-16 w-16 text-primary mx-auto mb-2" />
-                <p className="text-sm text-muted-foreground">Dashboard Preview</p>
-              </div>
+              <img 
+                src="/lovable-uploads/4768d38b-7403-49c2-b48e-7c57f2cf1c05.png"
+                alt="ScanHadir Dashboard Preview"
+                className="w-full mt-6 rounded-xl"
+              />
             </div>
           </div>
 
