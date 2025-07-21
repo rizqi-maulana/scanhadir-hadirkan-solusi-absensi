@@ -495,38 +495,39 @@ Overtime Threshold: 18:00 WIB
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
+        <div className="flex gap-8">
           
           {/* Sidebar */}
-          <div className="lg:col-span-1">
-            <div className="sticky top-40 space-y-6">
+          <div className="w-64 flex-shrink-0">
+            <div className="sticky top-32 bg-background/95 backdrop-blur border border-border rounded-lg p-4">
               {categories.map((category) => (
-                <div key={category}>
-                  <h3 className="text-sm font-semibold text-foreground mb-3 px-3">
+                <div key={category} className="mb-6">
+                  <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-3 px-3">
                     {category}
                   </h3>
-                  <nav className="space-y-1">
+                  <div className="space-y-1">
                     {sections
                       .filter(section => section.category === category)
                       .map((section) => {
-                        const IconComponent = section.icon;
-                        const isActive = activeSection === section.id;
+                        const Icon = section.icon;
                         return (
                           <button
                             key={section.id}
                             onClick={() => setActiveSection(section.id)}
-                            className={`w-full flex items-center space-x-3 px-3 py-2 text-sm rounded-lg transition-all text-left ${
-                              isActive
-                                ? "bg-muted text-foreground font-medium"
-                                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+                            className={`w-full flex items-center space-x-3 px-3 py-2 text-left rounded-md transition-colors text-sm ${
+                              activeSection === section.id
+                                ? "bg-primary text-primary-foreground font-medium"
+                                : "hover:bg-muted text-muted-foreground hover:text-foreground"
                             }`}
                           >
-                            <IconComponent className="h-4 w-4 flex-shrink-0" />
-                            <span className="truncate">{section.title}</span>
+                            <Icon className="h-4 w-4 flex-shrink-0" />
+                            <span className="truncate">
+                              {section.title}
+                            </span>
                           </button>
                         );
                       })}
-                  </nav>
+                  </div>
                 </div>
               ))}
 
@@ -540,65 +541,71 @@ Overtime Threshold: 18:00 WIB
             </div>
           </div>
 
-          {/* Content */}
-          <div className="lg:col-span-4">
-            {currentSection && (
-              <div className="max-w-none">
-                <div className="flex items-center space-x-3 mb-8">
-                  <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <currentSection.icon className="h-5 w-5 text-primary" />
+          {/* Main Content */}
+          <div className="flex-1 min-w-0">
+            <div className="bg-background border border-border rounded-lg">
+              {currentSection && (
+                <div className="p-8">
+                  <div className="flex items-center space-x-3 mb-8">
+                    <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                      <currentSection.icon className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <h1 className="text-3xl font-bold text-foreground">
+                        {currentSection.title}
+                      </h1>
+                      <p className="text-muted-foreground">{currentSection.category}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h2 className="text-3xl font-bold text-foreground">
-                      {currentSection.title}
-                    </h2>
-                    <p className="text-muted-foreground">{currentSection.category}</p>
+                  
+                  <div className="prose prose-neutral dark:prose-invert max-w-none">
+                    <div 
+                      dangerouslySetInnerHTML={{ 
+                        __html: currentSection.content
+                          .replace(/^# (.+)$/gm, '<h1 class="text-2xl font-bold text-foreground mb-6 mt-8 first:mt-0">$1</h1>')
+                          .replace(/^## (.+)$/gm, '<h2 class="text-xl font-semibold text-foreground mt-8 mb-4">$1</h2>')
+                          .replace(/^### (.+)$/gm, '<h3 class="text-lg font-medium text-foreground mt-6 mb-3">$1</h3>')
+                          .replace(/\*\*(.*?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
+                          .replace(/`([^`]+)`/g, '<code class="bg-muted px-2 py-1 rounded text-sm font-mono text-foreground border">$1</code>')
+                          .replace(/```([\s\S]*?)```/g, '<pre class="bg-muted p-4 rounded-lg text-sm font-mono overflow-x-auto text-foreground border my-4"><code>$1</code></pre>')
+                          .replace(/^\| (.+) \|$/gm, (match) => {
+                            const cells = match.slice(2, -2).split(' | ');
+                            return '<tr>' + cells.map(cell => `<td class="border border-border px-3 py-2 text-sm">${cell}</td>`).join('') + '</tr>';
+                          })
+                          .replace(/^- (.+)$/gm, '<li class="text-muted-foreground ml-4">$1</li>')
+                          .replace(/^\d+\. (.+)$/gm, '<li class="text-muted-foreground ml-4 list-decimal">$1</li>')
+                          .replace(/\n\n(?!<)/g, '</p><p class="text-muted-foreground mb-4">')
+                          .replace(/^(?!<[h|l|p|c|t])(.*?)$/gm, '<p class="text-muted-foreground mb-4">$1</p>')
+                      }} 
+                    />
                   </div>
-                </div>
-                
-                <div className="prose prose-lg max-w-none prose-headings:text-foreground prose-p:text-muted-foreground prose-strong:text-foreground prose-code:text-foreground prose-code:bg-muted prose-code:px-2 prose-code:py-1 prose-code:rounded prose-pre:bg-muted prose-pre:border prose-table:text-sm">
-                  <div 
-                    className="whitespace-pre-wrap leading-relaxed"
-                    dangerouslySetInnerHTML={{
-                      __html: currentSection.content
-                        .replace(/^# (.+)$/gm, '<h1 class="text-2xl font-bold mb-4 text-foreground">$1</h1>')
-                        .replace(/^## (.+)$/gm, '<h2 class="text-xl font-semibold mb-3 text-foreground mt-8">$1</h2>')
-                        .replace(/^### (.+)$/gm, '<h3 class="text-lg font-medium mb-2 text-foreground mt-6">$3</h3>')
-                        .replace(/\*\*(.+?)\*\*/g, '<strong class="font-semibold text-foreground">$1</strong>')
-                        .replace(/`(.+?)`/g, '<code class="bg-muted px-2 py-1 rounded text-sm font-mono">$1</code>')
-                        .replace(/```(\w+)?\n([\s\S]*?)```/g, '<pre class="bg-muted border rounded-lg p-4 overflow-x-auto mt-4 mb-4"><code class="text-sm">$2</code></pre>')
-                        .replace(/^\- (.+)$/gm, '<li class="mb-1">$1</li>')
-                        .replace(/\n\n/g, '</p><p class="mb-4">')
-                        .replace(/^\d+\. (.+)$/gm, '<li class="mb-1 list-decimal">$1</li>')
-                    }}
-                  />
-                </div>
 
-                {/* Navigation */}
-                <div className="flex justify-between items-center mt-12 pt-8 border-t border-border">
-                  <div>
-                    {sections.findIndex(s => s.id === activeSection) > 0 && (
-                      <Button variant="outline" onClick={() => {
-                        const currentIndex = sections.findIndex(s => s.id === activeSection);
-                        setActiveSection(sections[currentIndex - 1].id);
-                      }}>
-                        ← Sebelumnya
-                      </Button>
-                    )}
-                  </div>
-                  <div>
-                    {sections.findIndex(s => s.id === activeSection) < sections.length - 1 && (
-                      <Button onClick={() => {
-                        const currentIndex = sections.findIndex(s => s.id === activeSection);
-                        setActiveSection(sections[currentIndex + 1].id);
-                      }}>
-                        Selanjutnya →
-                      </Button>
-                    )}
+                  {/* Navigation */}
+                  <div className="flex justify-between items-center mt-12 pt-8 border-t border-border">
+                    <div>
+                      {sections.findIndex(s => s.id === activeSection) > 0 && (
+                        <Button variant="outline" onClick={() => {
+                          const currentIndex = sections.findIndex(s => s.id === activeSection);
+                          setActiveSection(sections[currentIndex - 1].id);
+                        }}>
+                          ← Sebelumnya
+                        </Button>
+                      )}
+                    </div>
+                    <div>
+                      {sections.findIndex(s => s.id === activeSection) < sections.length - 1 && (
+                        <Button onClick={() => {
+                          const currentIndex = sections.findIndex(s => s.id === activeSection);
+                          setActiveSection(sections[currentIndex + 1].id);
+                        }}>
+                          Selanjutnya →
+                        </Button>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            )}
+              )}
+            </div>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export const AppCarousel = ({ images, title, className = "" }: AppCarouselProps)
         <img
           src={images[currentIndex]}
           alt={`${title} preview ${currentIndex + 1}`}
-          className="w-full h-64 object-cover transition-transform duration-500"
+          className="w-full h-48 object-contain bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 transition-transform duration-500"
         />
         
         {/* Navigation buttons */}
