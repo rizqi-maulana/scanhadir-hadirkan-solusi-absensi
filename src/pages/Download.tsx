@@ -2,7 +2,6 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { AppCarousel } from "@/components/ui/app-carousel";
 import FAQSection from "@/components/sections/FAQSection";
 import { Smartphone, Monitor, Scan, CheckCircle } from "lucide-react";
 import { siteData } from "@/data/siteData";
@@ -64,19 +63,14 @@ const Download = () => {
                 </div>
               </div>
 
-              <Button className="w-full mb-4" asChild>
+              <Button className="w-full" asChild>
                 <a href={siteData.downloads.playstore} target="_blank" rel="noopener noreferrer">
                   <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M3 0c-1.65 0-3 1.35-3 3v18c0 1.65 1.35 3 3 3h18c1.65 0 3-1.35 3-3V3c0-1.65-1.35-3-3-3H3zm7.55 3.45c.78 0 1.48.06 1.48.06v4.23h-.85c-.84 0-.99.4-.99.98v1.28h1.81l-.24 1.83h-1.57v4.7h-1.93v-4.7H6.51v-1.83h1.75V8.59c0-1.75 1.07-2.7 2.62-2.7.75 0 1.4.06 1.58.08v1.83h-1.08c-.85 0-1.01.4-1.01.98v1.28h2.01l-.26 1.83h-1.75v4.7H8.44v-4.7H6.78v-1.83h1.66V8.96c0-1.67 1.02-2.58 2.51-2.58.73 0 1.36.05 1.54.07z"/>
+                    <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.61 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,10.81C20.5,11.08 20.75,11.5 20.75,12C20.75,12.5 20.53,12.9 20.18,13.18L17.89,14.5L15.39,12L17.89,9.5L20.16,10.81M6.05,2.66L16.81,8.88L14.54,11.15L6.05,2.66Z"/>
                   </svg>
                   Play Store
                 </a>
               </Button>
-
-              <AppCarousel 
-                images={siteData.screenshots.mobile}
-                title="ScanHadir Mobile"
-              />
             </div>
 
             {/* Scanner App */}
@@ -108,17 +102,12 @@ const Download = () => {
                 </div>
               </div>
 
-              <Button variant="outline" className="w-full mb-4" asChild>
+              <Button variant="outline" className="w-full" asChild>
                 <a href={siteData.downloads.scanner} target="_blank" rel="noopener noreferrer">
                   <Smartphone className="mr-2 h-4 w-4" />
                   Download (Institusi)
                 </a>
               </Button>
-
-              <AppCarousel 
-                images={siteData.screenshots.scanner}
-                title="ScanHadir Scanner"
-              />
             </div>
 
             {/* Desktop Dashboard */}
@@ -150,7 +139,7 @@ const Download = () => {
                 </div>
               </div>
 
-              <Button variant="outline" className="w-full mb-4" asChild>
+              <Button variant="outline" className="w-full" asChild>
                 <a href={siteData.downloads.windows} target="_blank" rel="noopener noreferrer">
                   <svg className="mr-2 h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-13.051-1.351"/>
@@ -158,11 +147,6 @@ const Download = () => {
                   Windows
                 </a>
               </Button>
-
-              <AppCarousel 
-                images={siteData.screenshots.desktop}
-                title="ScanHadir Dashboard"
-              />
             </div>
           </div>
 

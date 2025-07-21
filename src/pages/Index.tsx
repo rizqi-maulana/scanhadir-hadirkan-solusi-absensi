@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
 import VideoSection from "@/components/sections/VideoSection";
+import AppPreviewSection from "@/components/sections/AppPreviewSection";
 import CompaniesSection from "@/components/sections/CompaniesSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PricingSection from "@/components/sections/PricingSection";
@@ -16,6 +17,7 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <VideoSection />
+      <AppPreviewSection />
       <FeaturesSection />
       <CompaniesSection />
       <TestimonialsSection />
