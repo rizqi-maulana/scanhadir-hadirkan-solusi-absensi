@@ -65,14 +65,9 @@ const AppPreviewSection = () => {
                       </div>
                     </div>
                     
-                    <AppCarousel 
-                      images={app.images}
-                      title={app.title}
-                    />
-                    
-                    <div className="mt-4 text-center">
-                      <p className="text-sm text-primary font-medium">
-                        Klik untuk melihat lebih detail
+                    <div className="text-center py-8">
+                      <p className="text-primary font-medium">
+                        Klik untuk melihat preview aplikasi
                       </p>
                     </div>
                   </div>
