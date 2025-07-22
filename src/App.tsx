@@ -9,6 +9,7 @@ import Documentation from "./pages/Documentation";
 import Privacy from "./pages/Privacy";
 import Download from "./pages/Download";
 import About from "./pages/About";
+import Terms from "./pages/Terms";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
           <Route path="/tentang" element={<About />} />
           <Route path="/download" element={<Download />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/syarat-ketentuan" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
