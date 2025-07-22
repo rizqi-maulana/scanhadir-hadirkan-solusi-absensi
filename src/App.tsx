@@ -28,6 +28,7 @@ const App = () => (
           <Route path="/tentang" element={<About />} />
           <Route path="/download" element={<Download />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
           <Route path="/syarat-ketentuan" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
