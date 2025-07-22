@@ -1,5 +1,6 @@
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
+import { Shield } from "lucide-react";
 
 const Terms = () => {
   return (
@@ -7,14 +8,22 @@ const Terms = () => {
       <Navigation />
       
       <div className="container mx-auto px-4 py-16 max-w-4xl">
-        <div className="prose prose-slate dark:prose-invert max-w-none">
-          <h1 className="text-4xl font-bold text-foreground mb-8">
-            SYARAT & KETENTUAN SCANHADIR
+        {/* Header Section */}
+        <div className="text-center mb-12">
+          <div className="flex justify-center mb-6">
+            <div className="p-4 rounded-full bg-primary/10">
+              <Shield className="w-12 h-12 text-primary" />
+            </div>
+          </div>
+          <h1 className="text-4xl font-bold text-foreground mb-4">
+            Syarat & Ketentuan
           </h1>
-          
-          <p className="text-muted-foreground mb-8">
-            Terakhir diperbarui: [Tanggal/Bulan/Tahun]
-          </p>
+          <div className="flex items-center justify-center text-muted-foreground">
+            <span>Terakhir diperbarui: 24 Juni 2025</span>
+          </div>
+        </div>
+
+        <div className="prose prose-slate dark:prose-invert max-w-none">
 
           <div className="space-y-8">
             <section>
