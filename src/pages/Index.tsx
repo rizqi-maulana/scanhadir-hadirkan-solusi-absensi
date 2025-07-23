@@ -19,7 +19,8 @@ const Index = () => {
         version="2.1.0" 
         features={["Peningkatan performa aplikasi", "Fitur baru ScanHadir Mobile", "Perbaikan bug dan keamanan"]} 
       />
-      <Navigation />
+      <div className="pt-20">
+        <Navigation />
       <HeroSection />
       <VideoSection />
       <AppPreviewSection />
@@ -30,6 +31,7 @@ const Index = () => {
       <FAQSection />
       <DevelopersSection />
       <Footer />
+      </div>
     </div>
   );
 };

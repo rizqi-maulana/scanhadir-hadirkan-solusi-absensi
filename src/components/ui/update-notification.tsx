@@ -20,7 +20,7 @@ export const UpdateNotification = ({
   }
 
   return (
-    <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-b">
+    <div className="bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 border-b fixed top-0 left-0 right-0 z-50">
       <div className="container mx-auto px-4 py-3">
         <Card className="bg-background/80 backdrop-blur-sm border-primary/20">
           <div className="p-4">
