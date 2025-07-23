@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Sparkles, X } from "lucide-react";
@@ -43,12 +44,11 @@ export const UpdateNotification = ({
               <div className="flex items-center gap-2">
                 <Button 
                   size="sm"
-                  onClick={() => {
-                    localStorage.setItem('lastSeenUpdateVersion', version);
-                    window.location.reload();
-                  }}
+                  asChild
                 >
-                  Refresh Halaman
+                  <Link to="/updates">
+                    Lihat Update
+                  </Link>
                 </Button>
                 <Button 
                   variant="ghost" 

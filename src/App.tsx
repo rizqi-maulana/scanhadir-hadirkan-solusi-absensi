@@ -10,6 +10,7 @@ import Privacy from "./pages/Privacy";
 import Download from "./pages/Download";
 import About from "./pages/About";
 import Terms from "./pages/Terms";
+import Updates from "./pages/Updates";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,8 @@ const App = () => (
           <Route path="/dokumentasi" element={<Documentation />} />
           <Route path="/tentang" element={<About />} />
           <Route path="/download" element={<Download />} />
+          <Route path="/updates" element={<Updates />} />
+          <Route path="/pembaruan" element={<Updates />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/syarat-ketentuan" element={<Terms />} />
