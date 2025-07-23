@@ -10,10 +10,15 @@ import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PricingSection from "@/components/sections/PricingSection";
 import DevelopersSection from "@/components/sections/DevelopersSection";
 import FAQSection from "@/components/sections/FAQSection";
+import { UpdateNotification } from "@/components/ui/update-notification";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <UpdateNotification 
+        version="2.1.0" 
+        features={["Peningkatan performa aplikasi", "Fitur baru ScanHadir Mobile", "Perbaikan bug dan keamanan"]} 
+      />
       <Navigation />
       <HeroSection />
       <VideoSection />
