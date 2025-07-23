@@ -15,10 +15,7 @@ export const UpdateNotification = ({
 }: UpdateNotificationProps) => {
   const [dismissed, setDismissed] = useState(false);
 
-  // Check if user has seen this version update
-  const lastSeenVersion = localStorage.getItem('lastSeenUpdateVersion');
-  
-  if (dismissed || lastSeenVersion === version) {
+  if (dismissed) {
     return null;
   }
 
