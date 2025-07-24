@@ -8,13 +8,67 @@ const ComparisonSection = () => {
       category: "Fitur Android / Mobile App",
       features: [
         {
-          feature: "Absen QR, absen lapangan (GPS), absen pulang, istirahat, riwayat absen, izin, profit pengguna",
+          feature: "Absen QR Code",
           scanhadir: true,
-          hadir: "Absensi selfie (face recognition), GPS, reimbursement, approval cuti/lembur",
-          makari: "Selfie + GPS, integrasi fingerprint, mobile & web, mobile approval cuti/lembur",
-          jibble: "QR code, GPS tracking, face recognition, timesheet",
-          presensi: "Absensi dengan GPS, detection, mobile, approval cuti/lembur",
-          gajihub: "GPS real-tin absensi incl aplikasi payroll terintegrasi"
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✗"
+        },
+        {
+          feature: "Absen Lapangan (GPS)",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Absen Pulang & Istirahat",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Face Recognition",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✗",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✗"
+        },
+        {
+          feature: "Riwayat Absensi Lengkap",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Pengajuan Izin & Cuti",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✗",
+          presensi: "✓",
+          gajihub: "✗"
+        },
+        {
+          feature: "Profit/Komisi Pengguna",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
         }
       ]
     },
@@ -22,13 +76,58 @@ const ComparisonSection = () => {
       category: "Dashboard Admin",
       features: [
         {
-          feature: "Backup & restore (lokal + cloud), QR code scanner di dashbor, analisis kehadiran harian-bulanan-tahunan, analisis gender, manajemen staf lengkap",
+          feature: "Backup & Restore Data",
           scanhadir: true,
-          hadir: "Dashboard real-time approval cuti/lembur, reimbursement online, timesheet",
-          makari: "Dashboard tampilan filter kehadiran, laporan penggajian, approval cuti/lembur",
-          jibble: "Dashboard monitoring real-time, approval dan timesheet",
-          presensi: "Dashboard laporan kunjungan, absensi, izin, timeline ada payroll",
-          gajihub: "Dashboard payroll otomatis, reimbursem analisis kehadiran dan pinjaman"
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "QR Code Scanner Dashboard",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Analisis Kehadiran Real-time",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Laporan Harian/Bulanan/Tahunan",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Analisis Gender Karyawan",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Dashboard Payroll Terintegrasi",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✓",
+          jibble: "✗",
+          presensi: "✓",
+          gajihub: "✓"
         }
       ]
     },
@@ -36,13 +135,90 @@ const ComparisonSection = () => {
       category: "Manajemen Staf & Akun",
       features: [
         {
-          feature: "CRUD staf, aktif/nonaktif akun massal, kirim kredensial via email, integrasi email, shared",
+          feature: "CRUD Staf Lengkap",
           scanhadir: true,
-          hadir: "Manajemen staf dan karyawan secara real-time",
-          makari: "Manajemen multi-user, multi-role",
-          jibble: "Manajemen user dan tim",
-          presensi: "Pengelolaan staf dan tim absensi",
-          gajihub: "Manajemen karyawan, integrasi staf dan pinjaman"
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Aktif/Nonaktif Akun Massal",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✓",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Kirim Kredensial via Email",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Multi-role Management",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Integrasi Email Otomatis",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        }
+      ]
+    },
+    {
+      category: "Fitur Khusus & Keamanan",
+      features: [
+        {
+          feature: "Cloud Storage Backup",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Data Encryption",
+          scanhadir: true,
+          hadir: "✓",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✓",
+          gajihub: "✓"
+        },
+        {
+          feature: "Offline Mode Support",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✗",
+          jibble: "✗",
+          presensi: "✗",
+          gajihub: "✗"
+        },
+        {
+          feature: "Custom Branding",
+          scanhadir: true,
+          hadir: "✗",
+          makari: "✓",
+          jibble: "✓",
+          presensi: "✗",
+          gajihub: "✗"
         }
       ]
     }
