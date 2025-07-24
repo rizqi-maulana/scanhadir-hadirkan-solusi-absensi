@@ -6,6 +6,7 @@ import FeaturesSection from "@/components/sections/FeaturesSection";
 import VideoSection from "@/components/sections/VideoSection";
 import AppPreviewSection from "@/components/sections/AppPreviewSection";
 import CompaniesSection from "@/components/sections/CompaniesSection";
+import ComparisonSection from "@/components/sections/ComparisonSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import PricingSection from "@/components/sections/PricingSection";
 import DevelopersSection from "@/components/sections/DevelopersSection";
@@ -26,6 +27,7 @@ const Index = () => {
       <AppPreviewSection />
       <FeaturesSection />
       <CompaniesSection />
+      <ComparisonSection />
       <TestimonialsSection />
       <PricingSection />
       <FAQSection />
