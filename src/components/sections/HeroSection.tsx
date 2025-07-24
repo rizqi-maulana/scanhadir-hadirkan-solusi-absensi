@@ -42,15 +42,15 @@ const HeroSection = () => {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" asChild className="text-lg px-8 py-3">
-                <Link to="/download">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download Sekarang
+                <Link to="/pricing">
+                  <Smartphone className="mr-2 h-5 w-5" />
+                  Berlangganan Sekarang
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild className="text-lg px-8 py-3">
-                <Link to="/tentang">
-                  <Play className="mr-2 h-5 w-5" />
-                  Tentang Kami
+                <Link to="/download">
+                  <Download className="mr-2 h-5 w-5" />
+                  Download
                 </Link>
               </Button>
             </div>
