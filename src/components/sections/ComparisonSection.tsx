@@ -1,4 +1,5 @@
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Check, X } from "lucide-react";
 
 const ComparisonSection = () => {
@@ -68,71 +69,56 @@ const ComparisonSection = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-soft overflow-hidden">
-          <div className="overflow-x-auto">
-            <Table>
-              <TableHeader>
-                <TableRow className="bg-gray-50">
-                  <TableHead className="font-bold text-foreground min-w-[200px]">
-                    Fitur / Aplikasi
-                  </TableHead>
-                  {competitors.map((competitor) => (
-                    <TableHead 
-                      key={competitor.key} 
-                      className={`font-bold text-center min-w-[150px] ${
-                        competitor.highlight 
-                          ? "bg-primary text-primary-foreground" 
-                          : "text-foreground"
-                      }`}
-                    >
-                      {competitor.name}
-                    </TableHead>
-                  ))}
-                </TableRow>
-              </TableHeader>
-              <TableBody>
-                {comparisonData.map((category, categoryIndex) => (
-                  <>
-                    <TableRow key={`category-${categoryIndex}`} className="bg-gray-100">
-                      <TableCell 
-                        colSpan={competitors.length + 1} 
-                        className="font-bold text-foreground py-4"
-                      >
-                        {category.category}
-                      </TableCell>
-                    </TableRow>
-                    {category.features.map((featureRow, featureIndex) => (
-                      <TableRow key={`feature-${categoryIndex}-${featureIndex}`}>
-                        <TableCell className="font-medium text-sm leading-relaxed py-6">
-                          {featureRow.feature}
-                        </TableCell>
-                        <TableCell className="text-center py-6">
-                          <div className="flex items-center justify-center">
-                            <Check className="h-6 w-6 text-green-600" />
+        <div className="space-y-8">
+          {comparisonData.map((category, categoryIndex) => (
+            <Card key={categoryIndex} className="overflow-hidden">
+              <CardHeader className="bg-gradient-to-r from-primary/10 to-primary/5">
+                <CardTitle className="text-xl font-bold text-primary">
+                  {category.category}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-0">
+                {category.features.map((featureRow, featureIndex) => (
+                  <div key={featureIndex} className="border-b last:border-b-0">
+                    <div className="p-6">
+                      <h4 className="font-semibold text-foreground mb-4 text-sm leading-relaxed">
+                        {featureRow.feature}
+                      </h4>
+                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {competitors.map((competitor) => (
+                          <div
+                            key={competitor.key}
+                            className={`p-4 rounded-lg border ${
+                              competitor.highlight
+                                ? "bg-primary/5 border-primary/20"
+                                : "bg-muted/30 border-border"
+                            }`}
+                          >
+                            <div className="flex items-start justify-between mb-2">
+                              <Badge
+                                variant={competitor.highlight ? "default" : "secondary"}
+                                className="text-xs"
+                              >
+                                {competitor.name}
+                              </Badge>
+                              {competitor.key === "scanhadir" && (
+                                <Check className="h-4 w-4 text-green-600 flex-shrink-0" />
+                              )}
+                            </div>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                              {competitor.key === "scanhadir"
+                                ? "✓ Semua fitur lengkap"
+                                : featureRow[competitor.key as keyof typeof featureRow]}
+                            </p>
                           </div>
-                        </TableCell>
-                        <TableCell className="text-sm leading-relaxed py-6">
-                          {featureRow.hadir}
-                        </TableCell>
-                        <TableCell className="text-sm leading-relaxed py-6">
-                          {featureRow.makari}
-                        </TableCell>
-                        <TableCell className="text-sm leading-relaxed py-6">
-                          {featureRow.jibble}
-                        </TableCell>
-                        <TableCell className="text-sm leading-relaxed py-6">
-                          {featureRow.presensi}
-                        </TableCell>
-                        <TableCell className="text-sm leading-relaxed py-6">
-                          {featureRow.gajihub}
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
                 ))}
-              </TableBody>
-            </Table>
-          </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
 
         <div className="text-center mt-8">
